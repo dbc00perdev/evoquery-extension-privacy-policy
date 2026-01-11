@@ -16,42 +16,88 @@
         h1 { color: #00d4ff; }
         h2 { color: #444; margin-top: 30px; }
         .updated { color: #666; font-size: 14px; }
+        .highlight { background: #fff3cd; padding: 15px; border-radius: 8px; margin: 20px 0; }
     </style>
 </head>
 <body>
     <h1>EvoQuery Privacy Policy</h1>
-    <p class="updated">Last Updated: December 31, 2024</p>
+    <p class="updated">Last Updated: January 10, 2026</p>
 
     <h2>Overview</h2>
     <p>EvoQuery is a Chrome extension that queries multiple AI models simultaneously and analyzes consensus across their responses. We are committed to protecting your privacy and being transparent about our data practices.</p>
 
     <h2>Data We Collect</h2>
-    <p><strong>We do not collect, store, or share any personal data.</strong></p>
     
+    <h3>Account Information</h3>
+    <p>When you create an account, we collect:</p>
+    <ul>
+        <li>Email address (for authentication and account management)</li>
+        <li>Usage counts (to enforce tier limits)</li>
+    </ul>
+
+    <h3>Query Data (Anonymized Research Data)</h3>
+    <div class="highlight">
+        <p><strong>Important:</strong> When AI models significantly disagree on a response (consensus below 95%), we save anonymized query data for AI research purposes. This includes:</p>
+        <ul>
+            <li>Your query text</li>
+            <li>AI model responses</li>
+            <li>Consensus metrics and divergence scores</li>
+            <li>Query mode (Quick or Deep)</li>
+        </ul>
+        <p><strong>This data is NOT linked to your account or email.</strong> It is stored separately and cannot be traced back to you.</p>
+    </div>
+
+    <h3>Data We Do NOT Collect</h3>
+    <ul>
+        <li>Queries where AI models agree (95%+ consensus) are not stored</li>
+        <li>Browsing history or website content</li>
+        <li>Location data</li>
+        <li>Personal files or documents</li>
+    </ul>
+
+    <h2>How We Use Your Data</h2>
+    <p><strong>Account Data:</strong> Used solely for authentication, billing, and usage tracking.</p>
+    <p><strong>Anonymized Query Data:</strong> May be used to:</p>
+    <ul>
+        <li>Improve AI model accuracy and reliability</li>
+        <li>Create research benchmarks for AI disagreement patterns</li>
+        <li>License to AI research organizations for model improvement</li>
+    </ul>
+
     <h2>How the Extension Works</h2>
     <p>When you use EvoQuery:</p>
     <ul>
         <li>Your query is sent to our secure backend API</li>
-        <li>Our backend forwards the query to AI services (Claude, Grok, OpenAI)</li>
-        <li>Responses are returned to your browser and displayed</li>
-        <li>No queries or responses are stored on our servers</li>
-        <li>All processing is transient (temporary)</li>
+        <li>Our backend forwards the query to AI services (Claude, Grok, OpenAI, Google Gemini)</li>
+        <li>Responses are analyzed for consensus and returned to your browser</li>
+        <li>If models disagree significantly, anonymized data is saved for research</li>
     </ul>
 
     <h2>Chrome Storage</h2>
-    <p>The extension uses Chrome's local storage API solely to save user interface preferences. This data stays on your device and is never transmitted to us.</p>
+    <p>The extension uses Chrome's local storage API solely to save user interface preferences and authentication tokens. This data stays on your device.</p>
 
     <h2>Third-Party Services</h2>
-    <p>EvoQuery uses the following third-party AI services to process queries:</p>
+    <p>EvoQuery uses the following third-party services:</p>
     <ul>
-        <li>Anthropic (Claude)</li>
-        <li>xAI (Grok)</li>
-        <li>OpenAI (GPT-4o Mini and embeddings)</li>
+        <li>Anthropic (Claude) - AI processing</li>
+        <li>xAI (Grok) - AI processing</li>
+        <li>OpenAI (GPT-4o Mini) - AI processing</li>
+        <li>Google (Gemini) - AI processing</li>
+        <li>Supabase - Database hosting</li>
+        <li>Railway - Backend hosting</li>
+        <li>LemonSqueezy - Payment processing</li>
     </ul>
-    <p>Your queries are sent to these services through our backend API. Please refer to each service's privacy policy for information on how they handle data.</p>
+    <p>Please refer to each service's privacy policy for information on how they handle data.</p>
 
     <h2>Data Security</h2>
-    <p>All communication between the extension and our backend uses HTTPS encryption. Our backend is hosted on Railway with industry-standard security practices.</p>
+    <p>All communication between the extension and our backend uses HTTPS encryption. Our backend is hosted on Railway and our database on Supabase, both with industry-standard security practices.</p>
+
+    <h2>Your Rights</h2>
+    <ul>
+        <li><strong>Access:</strong> Request a copy of your account data</li>
+        <li><strong>Deletion:</strong> Request deletion of your account and associated data</li>
+        <li><strong>Opt-out:</strong> Contact us to exclude your queries from research data collection</li>
+    </ul>
 
     <h2>Children's Privacy</h2>
     <p>EvoQuery is not intended for use by children under 13 years of age. We do not knowingly collect any information from children.</p>
@@ -60,7 +106,7 @@
     <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
 
     <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, please open an issue at:<br>
+    <p>If you have questions about this privacy policy or want to exercise your data rights, please contact us at:<br>
     <a href="https://github.com/dbc00perdev/evo_query_extension/issues">https://github.com/dbc00perdev/evo_query_extension/issues</a></p>
 </body>
 </html>
