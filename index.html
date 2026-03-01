@@ -21,100 +21,111 @@
 </head>
 <body>
     <h1>EvoQuery Privacy Policy</h1>
-    <p class="updated">Last Updated: January 14, 2026</p>
+    <p class="updated">Last Updated: February 28, 2026</p>
 
     <h2>Overview</h2>
-    <p>EvoQuery is a Chrome extension that queries multiple AI models simultaneously and analyzes consensus across their responses. We are committed to protecting your privacy and being transparent about our data practices.</p>
+    <p>EvoQuery is a Chrome extension that queries 8 AI models simultaneously and analyzes consensus, contradictions, and reliability across their responses. We are committed to protecting your privacy and being transparent about our data practices.</p>
 
     <h2>Data We Collect</h2>
-    
+
     <h3>Account Information</h3>
     <p>When you create an account, we collect:</p>
     <ul>
         <li>Email address (for authentication and account management)</li>
-        <li>Password (securely hashed, never stored in plain text)</li>
+        <li>Password (stored as a one-way SHA-256 hash, never in plain text)</li>
         <li>Usage counts (to enforce tier limits)</li>
-        <li>Subscription status and billing information</li>
+        <li>Subscription tier and status</li>
     </ul>
 
     <h3>Query Data (Anonymized Research Data)</h3>
     <div class="highlight">
-        <p><strong>Important:</strong> When AI models significantly disagree on a response (consensus below 95%), we save anonymized query data for AI research purposes. This includes:</p>
+        <p><strong>Important:</strong> When AI models significantly disagree on a response (consensus score below 95%), we may save anonymized query data for AI reliability research. This includes:</p>
         <ul>
             <li>Your query text</li>
-            <li>AI model responses</li>
-            <li>Consensus metrics and divergence scores</li>
+            <li>AI model responses (compressed or full depending on divergence level)</li>
+            <li>Consensus score, contradiction types, and model agreement patterns</li>
+            <li>Domain classification of the query topic</li>
             <li>Query mode (Quick or Deep)</li>
-            <li>Timestamp</li>
+            <li>An internal user ID (not your email — cannot be used to identify you externally)</li>
         </ul>
-        <p><strong>This data is NOT linked to your account or email.</strong> It is stored separately and cannot be traced back to you.</p>
+        <p><strong>This data is NOT linked to your email address.</strong> You can opt out of this collection at any time in extension settings with no loss of functionality.</p>
     </div>
+
+    <h3>API Keys (BYOK — Bring Your Own Keys)</h3>
+    <p>Pro users may provide their own API keys for AI providers. These keys are:</p>
+    <ul>
+        <li>Stored locally in your browser using Chrome's <code>chrome.storage</code> API</li>
+        <li>Transmitted to our backend only to make API calls on your behalf</li>
+        <li>Never logged, stored in our database, or retained on our servers beyond the duration of a single request</li>
+        <li>Never shared with any third party</li>
+    </ul>
+    <p>We recommend setting spending limits at your provider's dashboard as an additional safeguard.</p>
 
     <h3>Technical Data</h3>
     <ul>
-        <li>Extension version and browser type (for compatibility)</li>
-        <li>API request logs (timestamps, response codes)</li>
-        <li>Error logs (for troubleshooting)</li>
+        <li>API request logs (timestamps, response codes) — retained 90 days</li>
+        <li>Error logs — retained 180 days</li>
     </ul>
 
     <h3>Data We Do NOT Collect</h3>
     <ul>
         <li>Queries where AI models agree (95%+ consensus) are not stored</li>
-        <li>Browsing history or website content</li>
+        <li>Browsing history or web page content</li>
         <li>Location data or precise IP addresses</li>
         <li>Personal files or documents</li>
         <li>Cookies or tracking pixels</li>
+        <li>Payment card information (handled entirely by LemonSqueezy)</li>
     </ul>
 
     <h2>How We Use Your Data</h2>
-    <p><strong>Account Data:</strong> Used solely for authentication, billing, usage tracking, and service communications. <strong>We do not sell your email address or personal account information to third parties.</strong></p>
-    
+    <p><strong>Account Data:</strong> Used solely for authentication, usage tracking, tier enforcement, and service communications. We do not sell your email address or personal account information to third parties.</p>
+
     <p><strong>Anonymized Query Data:</strong> May be used to:</p>
     <ul>
-        <li>Improve AI model accuracy and reliability</li>
-        <li>Create research benchmarks for AI disagreement patterns</li>
-        <li>Provide or sell to AI research organizations and AI model developers for model improvement and training</li>
-        <li>License to enterprise customers developing AI systems</li>
+        <li>Build AI reliability indices tracking model disagreement patterns over time</li>
+        <li>Create research benchmarks for AI consensus and contradiction analysis</li>
+        <li>License to researchers, AI labs, and institutions studying AI model behavior</li>
+        <li>Generate aggregate reports on frontier and open-source model divergence</li>
     </ul>
 
     <h2>Data Sharing and Disclosure</h2>
-    
+
     <h3>We Do Not Sell Personal Information</h3>
     <p><strong>We do not sell, rent, or trade your email address or personal account information.</strong></p>
 
     <h3>Service Providers</h3>
     <p>We share personal data only with essential service providers:</p>
     <ul>
-        <li><strong>Supabase</strong> - Database hosting (receives account information)</li>
-        <li><strong>Railway</strong> - Backend API hosting</li>
-        <li><strong>LemonSqueezy</strong> - Payment processing (receives email for billing)</li>
+        <li><strong>Supabase</strong> — Database hosting (receives account information)</li>
+        <li><strong>Railway</strong> — Backend API hosting</li>
+        <li><strong>LemonSqueezy</strong> — Payment processing (receives email for billing)</li>
     </ul>
 
     <h3>AI Processing Services</h3>
-    <p>When you submit a query, only the query text (not your email or account info) is sent to:</p>
+    <p>When you submit a query, only the query text (not your email or account info) is sent to the AI providers you have enabled. Current providers include:</p>
     <ul>
-        <li>Anthropic (Claude)</li>
-        <li>xAI (Grok)</li>
-        <li>OpenAI (GPT-4o Mini)</li>
-        <li>Google (Gemini)</li>
-        <li>Perplexity</li>
+        <li>Anthropic (Claude) — anthropic.com/privacy</li>
+        <li>OpenAI (GPT-4o) — openai.com/policies/privacy-policy</li>
+        <li>Google (Gemini Flash 2.0) — policies.google.com/privacy</li>
+        <li>xAI (Grok) — x.ai/privacy</li>
+        <li>Groq (Llama 4 Scout, Llama 4 Maverick, Llama 3.3, Qwen3) — groq.com/privacy</li>
     </ul>
-    <p>These services process queries but do not receive your email address or account information.</p>
+    <p>These services process queries under their own privacy policies. Your email address is never included in requests to these providers.</p>
 
     <h3>Sale of Anonymized Research Data</h3>
-    <p>We may sell, license, or provide anonymized query data (queries where AI models disagree) to AI companies, research organizations, and enterprises. This data contains NO personally identifiable information and cannot be linked back to you.</p>
+    <p>We may sell, license, or provide anonymized query data (queries where AI models significantly disagree) to AI companies, research organizations, and enterprises. This data contains no personally identifiable information and cannot be linked back to you.</p>
 
     <h3>Legal Requirements</h3>
-    <p>We may disclose data if required by law, court order, government requests, or to protect our rights and user safety.</p>
+    <p>We may disclose data if required by law, court order, or government request, or to protect our rights and user safety.</p>
 
     <h3>Business Transfers</h3>
     <p>If EvoQuery is acquired or merged, user data may be transferred to the new entity. You will be notified via email of any ownership change.</p>
 
     <h2>Data Retention and Storage</h2>
-    <p><strong>Account Data:</strong> Retained for the lifetime of your account. Upon account deletion, personal data (email, usage counts, subscription info) is permanently deleted within 30 days.</p>
-    
-    <p><strong>Anonymized Query Data:</strong> Stored indefinitely for research purposes. Because this data cannot be linked to you, it cannot be deleted upon request.</p>
-    
+    <p><strong>Account Data:</strong> Retained for the lifetime of your account. Upon account deletion, personal data is permanently deleted within 30 days.</p>
+
+    <p><strong>Anonymized Query Data:</strong> Stored indefinitely for research purposes. Because this data is not linked to your identity, it cannot be selectively deleted upon request.</p>
+
     <p><strong>Technical Logs:</strong> API logs retained for 90 days, error logs for 180 days.</p>
 
     <h2>International Data Transfers</h2>
@@ -123,61 +134,58 @@
     <h2>How the Extension Works</h2>
     <p>When you use EvoQuery:</p>
     <ul>
-        <li>Your query is sent to our secure backend API</li>
-        <li>Our backend forwards the query to AI services (Claude, Grok, OpenAI, Google Gemini, Perplexity)</li>
-        <li>Responses are analyzed for consensus and returned to your browser</li>
-        <li>If models disagree significantly (below 95% consensus), anonymized data is saved for research</li>
+        <li>Your query is sent to our secure backend API over HTTPS</li>
+        <li>Our backend forwards the query to AI providers (frontier and/or open-source depending on your mode selection)</li>
+        <li>Responses are analyzed locally for consensus, contradictions, and hallucination risk, then returned to your browser</li>
+        <li>In Deep Mode, your query is semantically reformulated into multiple variants and run across all selected models</li>
+        <li>If models disagree significantly (below 95% consensus), anonymized data may be saved for research unless you have opted out</li>
         <li>Your email address is never included in the research database</li>
     </ul>
 
     <h2>Chrome Storage</h2>
-    <p>The extension uses Chrome's local storage API solely to save user interface preferences, authentication tokens, and local query history. This data stays on your device and is not transmitted to our servers.</p>
+    <p>The extension uses Chrome's local storage API to save authentication state, user preferences, model selections, and BYOK API keys. This data stays on your device. API keys are never synced to our servers beyond the duration of a single request.</p>
 
-    <h2>Third-Party Services</h2>
-    <p>EvoQuery uses the following third-party services:</p>
+    <h2>Chrome Web Store Limited Use Disclosure</h2>
+    <p>EvoQuery's use of data received from Chrome extension APIs complies with the Chrome Web Store User Data Policy, including the Limited Use requirements:</p>
     <ul>
-        <li>Anthropic (Claude) - AI processing</li>
-        <li>xAI (Grok) - AI processing</li>
-        <li>OpenAI (GPT-4o Mini) - AI processing</li>
-        <li>Google (Gemini) - AI processing</li>
-        <li>Perplexity - AI processing</li>
-        <li>Supabase - Database hosting</li>
-        <li>Railway - Backend hosting</li>
-        <li>LemonSqueezy - Payment processing</li>
+        <li>Data is used only to provide and improve EvoQuery's core functionality (multi-model AI comparison)</li>
+        <li>Data is not transferred to third parties except to AI providers as necessary to process queries, and to LemonSqueezy as necessary to process payments</li>
+        <li>Data is not used for advertising purposes</li>
+        <li>Data is not used to determine creditworthiness or for lending purposes</li>
     </ul>
-    <p>Please refer to each service's privacy policy for information on how they handle data.</p>
 
     <h2>Data Security</h2>
-    <p>We implement industry-standard security measures:</p>
+    <p>We implement the following security measures:</p>
     <ul>
         <li>All communication between the extension and our backend uses HTTPS encryption</li>
-        <li>Passwords are hashed using bcrypt (we never see your actual password)</li>
-        <li>Database encryption at rest (Supabase)</li>
-        <li>JWT tokens with expiration for authentication</li>
-        <li>Regular security audits and dependency updates</li>
+        <li>Passwords are stored as SHA-256 hashes — we never see your actual password</li>
+        <li>API keys are never logged or persisted server-side</li>
+        <li>Timing-safe key comparison prevents credential timing attacks</li>
+        <li>Rate limiting and request signing prevent unauthorized API access</li>
+        <li>Database encryption at rest via Supabase</li>
     </ul>
-    <p>However, no method of electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+    <p>No method of electronic storage is 100% secure. We cannot guarantee absolute security.</p>
 
     <h2>Your Rights</h2>
     <ul>
         <li><strong>Access:</strong> Request a copy of your account data</li>
         <li><strong>Correction:</strong> Update your email and preferences through extension settings</li>
-        <li><strong>Deletion:</strong> Request deletion of your account and associated personal data</li>
+        <li><strong>Deletion:</strong> Request deletion of your account and associated personal data within 30 days</li>
+        <li><strong>Opt-out:</strong> Disable research data collection at any time in extension settings — no functionality is affected</li>
         <li><strong>Export:</strong> Request your data in machine-readable format (JSON/CSV)</li>
-        <li><strong>Opt-out:</strong> Contact us to exclude your queries from research data collection (anonymized data already collected cannot be removed)</li>
     </ul>
 
     <h3>California Residents (CCPA)</h3>
-    <p>California residents have additional rights including the right to know what data is collected, right to delete, and right to opt-out of data "sales" (anonymized query data). We will not discriminate for exercising these rights.</p>
+    <p>California residents have the right to know what data is collected, the right to delete personal information, and the right to opt out of data sales. We do not discriminate against users who exercise these rights. Anonymized query data that cannot be linked to you falls outside the scope of personal information under CCPA.</p>
 
     <h3>European Residents (GDPR)</h3>
-    <p>EU/UK residents have rights including access, rectification, erasure, data portability, and the right to object to processing. Our legal basis for processing is contractual necessity and legitimate interest.</p>
+    <p>EU/UK residents have rights including access, rectification, erasure, data portability, and the right to object to processing. Our legal basis for processing is contractual necessity and legitimate interest. Contact us to exercise these rights.</p>
 
     <h2>Children's Privacy</h2>
     <p>EvoQuery is not intended for use by children under 13 years of age. We do not knowingly collect information from children. If we discover we have collected data from a child under 13, we will delete it immediately.</p>
 
     <h2>Changes to This Policy</h2>
-    <p>We may update this privacy policy from time to time. Any material changes will be communicated via:</p>
+    <p>We may update this privacy policy as EvoQuery's features evolve. Material changes will be communicated via:</p>
     <ul>
         <li>Email notification to registered users (at least 30 days before changes take effect)</li>
         <li>In-extension notification banner</li>
@@ -193,9 +201,9 @@
     <a href="https://github.com/dbc00perdev/evo_query_extension/issues">https://github.com/dbc00perdev/evo_query_extension/issues</a></p>
 
     <hr style="margin: 40px 0; border: none; border-top: 1px solid #ddd;">
-    
+
     <p style="font-size: 14px; color: #666; font-style: italic;">
-        <strong>In Summary:</strong> We collect your email for account management. We may sell anonymized queries (when AI models disagree) to AI companies for research—this data cannot be traced back to you. We do not sell your personal information.
+        <strong>In Summary:</strong> We collect your email for account management. When AI models significantly disagree on a query, we may store anonymized data for AI reliability research — this cannot be traced back to you, and you can opt out at any time. We do not sell your personal information. Pro users can provide their own API keys, which are never stored on our servers.
     </p>
 </body>
 </html>
